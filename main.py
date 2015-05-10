@@ -23,5 +23,5 @@ if __name__ == '__main__':
     # kts.create_blocks()
     # print(kts)
     kts.create_parallel()
-    kts.print_classes()
+    # kts.print_classes()
     kts.test_classes()
