@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-__author__ = 'Martin Veselovsky'
+# Author: Bc. Martin Veselovsky
+# Email:  xvesel60@stud.fit.vutbr.cz
+# Date:   10.5.2015
 
 import argparse
-import logging
 from kts import KTS
-
-logging.basicConfig(level=logging.DEBUG)
-
 
 
 def parse_args():
@@ -20,12 +18,6 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     kts = KTS(args.order)
-    # kts.create_blocks()
-    # print(kts)
-    # kts.solve()
-    print(kts)
-    # kts.create_parallel()
-    # kts.print_classes()
     kts.solve()
     kts.test_classes()
-    kts.print_solution()
+    kts.print_solution(print_heading=True)

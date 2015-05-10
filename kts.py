@@ -3,8 +3,9 @@
 
 # Author: Bc. Martin Veselovsky
 # Email:  xvesel60@stud.fit.vutbr.cz
+# Date:   10.5.2015
 
-from numbthy import is_prime, is_primitive_root, power_mod, factor
+from numbthy import is_primitive_root, power_mod, factor
 
 
 class KTS():
@@ -57,8 +58,9 @@ class KTS():
 
     @staticmethod
     def is_prime_power(n):
-        if is_prime(n):
-            return True
+        """
+        Prime power is a positive integer power of a single prime number
+        """
         if len(factor(n)) == 1:
             return True
         return False
@@ -253,7 +255,9 @@ class KTS():
         for k, v in self.classes.items():
             print(k, v)
 
-    def print_solution(self):
+    def print_solution(self, print_heading=False):
+        if print_heading:
+            print(self)
         for day, blocks in self.solution.items():
             print('Day %2s: ' % day, end='')
             for block_triple in blocks:
