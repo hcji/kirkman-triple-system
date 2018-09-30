@@ -1,23 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Author: Bc. Martin Veselovsky
-# Email:  xvesel60@stud.fit.vutbr.cz
-# Date:   10.5.2015
-
 from numbthy import is_primitive_root, power_mod, factor
 
 
-class KTS():
+class KTS:
     """
     Kirkman Triple System (KTS)
-
-    Implementation based on publication:
-
-        Stinson, D.: A survey of Kirkman triple systems and related designs.
-        Discrete Mathematics, Volume 92, Issues 1–3, 17 November 1991, Pages 371–393,
-        ISSN 0012-365X, doi:http://dx.doi.org/10.1016/0012-365X(91)90294-C.
-        URL http://www.sciencedirect.com/science/article/pii/0012365X9190294C
     """
 
     def __init__(self, order):
@@ -28,8 +17,10 @@ class KTS():
         :param order: order of KTS, e.g. number of participants
         """
         if order % 6 != 3:
-            raise ValueError('Order number %s does not satisfy necessary '
-                             'condition "order `mod` 6 = 3"'.format(order))
+            raise ValueError(
+                'Order %s does not satisfy necessary condition "order `mod` 6 = 3". '
+                'Try for example order of 15.' % order
+            )
 
         # Construction 1.1 [45, Theorem 6]
         self.q = int(order / 2)
@@ -46,7 +37,7 @@ class KTS():
                 self.create_blocks = self.create_blocks_2
                 self.create_parallel = self.create_parallel_2
             else:
-                raise ValueError('Not possible')
+                raise ValueError('Not possible to solve the problem for order %s' % order)
 
         self.order = order
         self.t = int((self.q - 1) / 6)
@@ -265,11 +256,12 @@ class KTS():
             print()
 
     def __str__(self):
-        s = 'Kirkman triple system (KTS)\n' \
-            '  Order: %s \n' \
-            '  Points %s \n' \
-            '  Prime power: %s \n' \
-            '  Method used: %s \n' \
-            '  Solution: %s days' % \
+        return (
+            'Kirkman triple system (KTS)\n'
+            '  Order: %s \n'
+            '  Points %s \n'
+            '  Prime power: %s \n'
+            '  Method used: %s \n'
+            '  Solution: %s days' %
             (self.order, self.points, self.q, self.method_name, len(self.solution))
-        return s
+         )

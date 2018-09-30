@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Author: Bc. Martin Veselovsky
-# Email:  xvesel60@stud.fit.vutbr.cz
-# Date:   10.5.2015
-
 import argparse
+
 from kts import KTS
 
 

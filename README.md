@@ -6,7 +6,12 @@ Mr. Kirkman posed the following problem
 succession: it is required to arrange them daily, so that no two will walk
 twice abreast. 
 
-This project implements solution described in article [A survey of Kirkman triple systems and related designs](https://www.sciencedirect.com/science/article/pii/0012365X9190294C)
+This project implements solution described in following article
+
+> Stinson, D.: A survey of Kirkman triple systems and related designs.
+Discrete Mathematics, Volume 92, Issues 1–3, 17 November 1991, Pages 371–393,
+ISSN 0012-365X, doi:http://dx.doi.org/10.1016/0012-365X(91)90294-C.
+URL http://www.sciencedirect.com/science/article/pii/0012365X9190294C
 
 ### Usage
 
